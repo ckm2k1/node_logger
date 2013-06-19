@@ -16,6 +16,12 @@ var obj = {
 }
 
 logger.log(obj);
+
+var msg = 'A log line';
+
+logger.success(msg); //green
+logger.error(msg); //red
+logger.warn(msg); //yellow
 ```
 
 Author
