@@ -16,7 +16,7 @@ var log = function (obj, options) {
 };
 
 var logWithColor = function(msg, color) {
-  if (_.isUndefined(msg)) return;
+  if (_.isUndefined(msg) || _.isNull(msg)) return;
   console.log(msg[color]);
 };
 
