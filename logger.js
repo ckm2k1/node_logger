@@ -3,7 +3,7 @@ var util = require('util'),
   _ = require('underscore');
 
 var logDefaults = {
-  showHidden: true,
+  showHidden: false,
   depth: null,
   colors: true,
   debug: true
