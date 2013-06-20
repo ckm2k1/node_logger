@@ -22,6 +22,7 @@ var msg = 'A log line';
 logger.success(msg); //green
 logger.error(msg); //red
 logger.warn(msg); //yellow
+logger.info(msg); //cyan
 ```
 
 Author
