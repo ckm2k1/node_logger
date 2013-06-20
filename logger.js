@@ -29,8 +29,12 @@ var error = function(msg) {
 var success = function(msg) {
   logWithColor(msg, 'green');
 };
+var info = function(msg) {
+  logWithColor(msg, 'cyan');
+};
 
 module.exports.log = log;
 module.exports.error = error;
 module.exports.success = success;
+module.exports.info = info;
 module.exports.warn = warn;
