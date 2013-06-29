@@ -16,8 +16,8 @@ var log = function (obj, options) {
 };
 
 var logWithColor = function(msg, color) {
-  if (_.isUndefined(msg) || _.isNull(msg)) return;
-  console.log(msg[color]);
+  // We instantiate a string in case null or undefined was passed in.
+  console.log(String(msg)[color]);
 };
 
 var warn = function(msg) {
