@@ -8,7 +8,7 @@ var logDefaults = {
   colors: true,
   debug: true
 };
-var log = function (obj, options) {
+var prettyPrint = function (obj, options) {
   options = options || {};
   _.defaults(options, logDefaults);
   if (!options.debug) return;
@@ -33,7 +33,8 @@ var info = function(msg) {
   logWithColor(msg, 'cyan');
 };
 
-module.exports.log = log;
+module.exports.prettyPrint = prettyPrint;
+module.exports.pp = prettyPrint; //alias
 module.exports.error = error;
 module.exports.success = success;
 module.exports.info = info;
