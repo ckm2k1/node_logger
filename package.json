@@ -1,6 +1,6 @@
 {
   "name": "node_logger",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Small logger module to wrap util.inspect and console.log and add colors.",
   "main": "logger.js",
   "scripts": {
@@ -18,9 +18,10 @@
     "wrapper",
     "colors"
   ],
-  "dependencies" : {
+  "dependencies": {
     "underscore": "1.4.4",
-    "colors": "~0.6.0"
+    "colors": "~0.6.0",
+    "moment": "~2.1.0"
   },
   "engines": {
     "node": ">0.10.5"

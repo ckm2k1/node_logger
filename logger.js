@@ -1,6 +1,11 @@
 var util = require('util'),
   colors = require('colors'),
-  _ = require('underscore');
+  _ = require('underscore'),
+  moment = require('moment');
+
+var config = {
+  showTimestamp: true
+};
 
 var logDefaults = {
   showHidden: false,
@@ -8,6 +13,7 @@ var logDefaults = {
   colors: true,
   debug: true
 };
+
 var log = function (obj, options) {
   options = options || {};
   _.defaults(options, logDefaults);
@@ -17,7 +23,11 @@ var log = function (obj, options) {
 
 var logWithColor = function(msg, color) {
   if (_.isUndefined(msg) || _.isNull(msg)) return;
-  console.log(msg[color]);
+  var out = msg[color];
+  if (config.showTimestamp) {
+    out = [moment().format('MMM DD YYYY, HH:mm:ss'), out].join(' - ');
+  }
+  console.log(out);
 };
 
 var warn = function(msg) {
@@ -33,8 +43,24 @@ var info = function(msg) {
   logWithColor(msg, 'cyan');
 };
 
+function configure () {
+  var key, value;
+  key = _.first(arguments);
+  value = _.last(arguments);
+
+  if (!arguments.length) {
+    return config;
+  }
+  if (_.isObject(key)) {
+    config = key;
+  } else {
+    config[key] = value;
+  }
+}
+
 module.exports.log = log;
 module.exports.error = error;
 module.exports.success = success;
 module.exports.info = info;
 module.exports.warn = warn;
+module.exports.configure = configure;
