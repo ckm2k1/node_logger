@@ -14,7 +14,7 @@ var logDefaults = {
   debug: true
 };
 
-var log = function (obj, options) {
+var prettyPrint = function (obj, options) {
   options = options || {};
   _.defaults(options, logDefaults);
   if (!options.debug) return;
@@ -27,7 +27,8 @@ var logWithColor = function(msg, color) {
   if (config.showTimestamp) {
     out = [moment().format('MMM DD YYYY, HH:mm:ss'), out].join(' - ');
   }
-  console.log(out);
+  // We instantiate a string in case null or undefined was passed in.
+  console.log(String(msg)[color]);
 };
 
 var warn = function(msg) {
@@ -58,7 +59,9 @@ function configure () {
   }
 }
 
-module.exports.log = log;
+module.exports.log = prettyPrint; //alias for backward compat.
+module.exports.prettyPrint = prettyPrint;
+module.exports.pp = prettyPrint; //alias
 module.exports.error = error;
 module.exports.success = success;
 module.exports.info = info;
