@@ -1,10 +1,6 @@
 {
   "name": "node_logger",
-<<<<<<< HEAD
-  "version": "0.0.4",
-=======
-  "version": "0.0.5",
->>>>>>> 4745818ca4ac8c9f63cf15bec039264cb7e200ca
+  "version": "0.0.6",
   "description": "Small logger module to wrap util.inspect and console.log and add colors.",
   "main": "logger.js",
   "scripts": {
