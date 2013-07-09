@@ -7,7 +7,7 @@ var config = {
   showTimestamp: true
 };
 
-var logDefaults = {
+var ppConfig = {
   showHidden: false,
   depth: null,
   colors: true,
@@ -16,7 +16,7 @@ var logDefaults = {
 
 var prettyPrint = function (obj, options) {
   options = options || {};
-  _.defaults(options, logDefaults);
+  _.defaults(options, ppConfig);
   if (!options.debug) return;
   console.log(util.inspect(obj, options));
 };
