@@ -22,13 +22,13 @@ var prettyPrint = function (obj, options) {
 };
 
 var logWithColor = function(msg, color) {
-  if (_.isUndefined(msg) || _.isNull(msg)) return;
+  if (_.isUndefined(msg) || _.isNull(msg)) msg = String(msg);
   var out = msg[color];
   if (config.showTimestamp) {
     out = [moment().format('MMM DD YYYY, HH:mm:ss'), out].join(' - ');
   }
   // We instantiate a string in case null or undefined was passed in.
-  console.log(String(msg)[color]);
+  console.log(out);
 };
 
 var warn = function(msg) {
