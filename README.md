@@ -37,7 +37,7 @@ logger.info(msg); //cyan
 You can call logger.configure() with a settings object or key, value pair
 to change logger options.
 
-Usage:
+Example:
 
 ``` js
 logger.configure({ showTimestamp: true}); //or
@@ -45,8 +45,9 @@ logger.configure('showTimestamp', true);
 ```
 
 Options:
-timestampShow: true|false // default: true. Will display a timestamp next to messages.
-timestampFormat: string // default: 'MMM DD YYYY, HH:mm:ss'. Any format string that moment.js can process.
+
+ - __timestampShow__: **true|false** // default: true. Will display a timestamp next to messages.
+ - __timestampFormat__: **"string"** // default: 'MMM DD YYYY, HH:mm:ss'. Any format string that moment.js can process.
 
 
 Author
