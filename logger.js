@@ -4,7 +4,8 @@ var util = require('util'),
   moment = require('moment');
 
 var config = {
-  showTimestamp: true
+  timestampShow: true,
+  timestampFormat: 'MMM DD YYYY, HH:mm:ss'
 };
 
 var ppConfig = {
@@ -25,8 +26,8 @@ var logWithColor = function(msg, color) {
   // We instantiate a string in case null or undefined was passed in.
   if (_.isUndefined(msg) || _.isNull(msg)) msg = String(msg);
   var out = msg[color];
-  if (config.showTimestamp) {
-    out = [moment().format('MMM DD YYYY, HH:mm:ss'), out].join(' - ');
+  if (config.timestampShow) {
+    out = [moment().format(config.timestampFormat), out].join(' - ');
   }
   console.log(out);
 };
