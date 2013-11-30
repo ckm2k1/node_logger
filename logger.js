@@ -1,3 +1,8 @@
+/*
+  Author: Stanislav Venzerul
+  License: MIT
+  Date: Nov 30th, 2013
+ */
 var util = require('util'),
   colors = require('colors'),
   _ = require('underscore'),
