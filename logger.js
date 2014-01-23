@@ -27,6 +27,11 @@ var prettyPrint = function (obj, options) {
   console.log(util.inspect(obj, options));
 };
 
+var json = function(obj, indent, replacer) {
+  var indent = indent || 2;
+  console.log(JSON.stringify(obj, replacer, indent));
+};
+
 var logWithColor = function(msg, color) {
   // We instantiate a string in case null or undefined was passed in.
   if (_.isUndefined(msg) || _.isNull(msg)) msg = String(msg);
@@ -73,3 +78,4 @@ module.exports.success = success;
 module.exports.info = info;
 module.exports.warn = warn;
 module.exports.configure = configure;
+module.exports.json = json;
