@@ -28,8 +28,15 @@ var prettyPrint = function (obj, options) {
 };
 
 var json = function(obj, indent, replacer) {
+  /*jshint shadow:true*/
   var indent = indent || 2;
   console.log(JSON.stringify(obj, replacer, indent));
+};
+
+var formatJSON = function(obj, indent, replacer) {
+  /*jshint shadow:true*/
+  var indent = indent || 2;
+  return JSON.stringify(obj, replacer, indent);
 };
 
 var logWithColor = function(msg, color) {
@@ -79,3 +86,4 @@ module.exports.info = info;
 module.exports.warn = warn;
 module.exports.configure = configure;
 module.exports.json = json;
+module.exports.formatJSON = formatJSON;
